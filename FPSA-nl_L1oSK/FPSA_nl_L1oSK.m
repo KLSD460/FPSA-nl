@@ -16,7 +16,7 @@ function [x,output] = FPSA_nl_L1oSK(A,b,lb,ub,K,lambda,x0,pm)
 [m,n] = size(A);
 if isfield(pm,'maxit'); maxit = pm.maxit ; else; maxit = 20*m; end
 if isfield(pm,'tol'); tol = pm.tol; else; tol = 1e-8;end
-if isfield(pm,'sigma'); sigma = pm.sigma; else; sigma = 1.7;end
+if isfield(pm,'sigma'); sigma = pm.sigma; else; sigma = 1.35;end
 if isfield(pm,'gamma'); gamma = pm.gamma; else; gamma = 2;end
 if isfield(pm,'q'); q = pm.q; else; q = 0.9;end
 if isfield(pm,'T'); T = pm.T; else; T = 5;end
@@ -50,7 +50,7 @@ for i = 1:maxit
     idx = mod(i-1,T);
     fold(idx+1) =theta;
     gh     = gradh(xold);
-    delta = gamma*dx/norm(gh - ghold);
+    delta = gamma*dx/(norm(gh - ghold)+eps);
     for ii = 1:250
         d1 = uold + delta*(theta*y - gh);
         x = sign(d1).*max(abs(d1) - lambda*delta,0);
