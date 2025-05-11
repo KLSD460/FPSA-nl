@@ -17,7 +17,7 @@ This folder include the MATLAB code of FPSA-nl for solving $L_1/S_{\kappa}$ spar
 
 - data_generator_A.m: the file for generating matrix $A$.
 
-- norm_maxK.m: compute the max $\kappa-$ norm for $x$.
+- norm_maxK.m: compute the max K-norm for $x$.
 
 - randsample_separated.m: random sampling K integers from 1-N with spacing at least L.
 
