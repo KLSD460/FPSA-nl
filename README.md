@@ -5,7 +5,7 @@ Some code for experiments done in the paper "A single-loop Proximal Subgradient 
 References:
 Deren Han, Min Tao and Zihao Xia.
 A Single-loop Proximal Subgradient Algorithm for A Class Structured Fractional Programs,
-https://arxiv.org/abs/2503.12176
+[https://link.springer.com/article/10.1007/s10915-025-02987-x]
 
 # FPSA-nl_L1oSK
 
